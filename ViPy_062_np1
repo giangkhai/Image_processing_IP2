@@ -1,1 +1,17 @@
+import numpy as np
+
+# Path
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+
+# read data
+data = np.genfromtxt(url, delimiter=',', usecols=1)
+
+# cal min-max value
+min_data= np.min(data)
+max_data= np.max(data)
+
+# min-max normalization
+normalized= (data - min_data) / (max_data - min_data)
+
+print(normalized)
 
