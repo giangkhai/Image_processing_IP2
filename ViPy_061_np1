@@ -1,0 +1,16 @@
+#!/bin/python3
+
+import numpy as np
+
+if __name__ == '__main__':
+    n = int(input().strip())  # Input integer n
+
+    # Create a numpy array from 0 to n-1
+    arr = np.arange(n)
+
+    # Replace odd values with -1
+    arr[arr % 2 != 0] = -1
+
+    # Print the modified array
+    print(arr)
+
