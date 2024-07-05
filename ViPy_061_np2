@@ -1,0 +1,11 @@
+import numpy as np
+
+# create 3 parts
+part1 = np.arange(5)
+part2 = np.arange(5, 10)
+part3 = np.ones(5, dtype=int)
+
+# Combine 3 of them
+result = np.vstack([part1, part2, part3, part3])
+
+print(result)
