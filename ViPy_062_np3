@@ -1,1 +1,22 @@
+import numpy as np
+
+# URL path
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+
+# Read data
+data = np.genfromtxt(url, delimiter=',', usecols=(0, 1, 2, 3))
+
+# Give np.nan the random positions
+np.random.seed(0)  # for reproducibility
+nan_indices = (np.random.rand(*data.shape) < 0.2)  # 10% of the data will be set to np.nan
+data[nan_indices] = np.nan
+
+print("Data with np.nan values:")
+print(data)
+
+# Replace np.nan with 0
+data = np.nan_to_num(data, nan=0.0)
+
+print("Data with np.nan replaced by 0:")
+print(data)
 
