@@ -1,1 +1,17 @@
+import numpy as np
+
+# path
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+
+# read data
+data = np.genfromtxt(url, delimiter=',', usecols=0)
+
+# Calculate
+mean_data = np.mean(data)
+median_data= np.median(data)
+std_data= np.std(data)
+
+print(f"Mean: {mean_data}")
+print(f"Median: {median_data}")
+print(f"Standard: {std_data}")
 
